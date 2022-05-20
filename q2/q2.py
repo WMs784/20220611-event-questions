@@ -15,14 +15,16 @@ def serch_index(sorted_array, target_number):
 
     # ここから記述
     start = 0
-    goal = sorted_array.length()
-    while(start <= goal){
+    goal = len(sorted_array)
+    while goal - start >1:
         index = (start+goal)//2
-        if(sorted_array[index] == target_number){
-            retrun index
-            break
-        }
-    }
+        # print(start)
+        if sorted_array[index] == target_number:
+            return index
+        elif sorted_array[index] < target_number:
+            start = index
+        else:
+            goal = index
 
 
     # ここまで記述
