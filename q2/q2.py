@@ -14,18 +14,25 @@ def main():
 def serch_index(sorted_array, target_number):
 
     # ここから記述
+
+    #初期値，左端
     start = 0
+    #初期値，右端
     goal = len(sorted_array)
-    while goal - start >1:
+
+    #真ん中の値が存在する場合
+    while goal - start >1:      
+        #間の値を取る
         index = (start+goal)//2
-        # print(start)
+        #目標値と一致した場合
         if sorted_array[index] == target_number:
             return index
+        #目標値より小さい場合
         elif sorted_array[index] < target_number:
             start = index
+        #目標値より大きい場合
         else:
             goal = index
-
 
     # ここまで記述
 
